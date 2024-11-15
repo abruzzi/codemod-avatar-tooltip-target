@@ -1,0 +1,76 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 720px;
+  margin: 2rem auto;
+  color: #333333;
+  font-family: "Andale Mono", sans-serif;
+}
+
+.avatar {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+.avatar img {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  position: absolute;
+  white-space: nowrap;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  gap: 8px;
+  margin-block: 1rem;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+p {
+  color: #666;
+  font-size: 0.8rem;
+}
