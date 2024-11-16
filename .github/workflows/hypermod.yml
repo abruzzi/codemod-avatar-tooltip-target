@@ -4,19 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       deploymentId:
-        description: "The deployment ID contianing instructions to apply on a repository"
-      deploymentKey:
-        description: "The deployment key to authenticate the request"
+        description: "The deployment ID containing instructions to apply on a repository"
+        required: true
+
 jobs:
   receive_hypermod_event:
-    permissions: write-all
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run Hypermod CLI
         uses: hypermod-io/action@v1
         with:
           deploymentId: ${{ inputs.deploymentId }}
-          deploymentKey: ${{ inputs.deploymentKey }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
